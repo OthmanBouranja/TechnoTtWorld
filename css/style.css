@@ -493,6 +493,9 @@
 /*** Offer End ***/
 
 /*** Blog Start ***/
+.blog-item{
+    height: 552px;
+}
 .blog .blog-item {
     border-radius: 10px;
     background: var(--bs-white);
