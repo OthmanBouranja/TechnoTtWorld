@@ -25,6 +25,9 @@
     transition: 0.5s;
     z-index: 99;
 }
+.img-logo-footer{
+    width: 146px;
+}
 
 /*** Button Start ***/
 .btn {
