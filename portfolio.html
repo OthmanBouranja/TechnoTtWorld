@@ -44,21 +44,24 @@
     <!-- Spinner End -->
 
 
+
     <!-- Navbar & Hero Start -->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
             <a href="" class="navbar-brand p-0">
-              <img src="img/logo-it-world.jpeg" class="img-logo" alt="Logo">
+                <h1 class="text-primary"><i class="fas fa-search-dollar me-3"></i>Stocker</h1>
+                <!-- <img src="img/logo.png" alt="Logo"> -->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link">Accueil</a>
+                    <a href="index.html" class="nav-item nav-link ">Accueil</a>
                     <a href="about.html" class="nav-item nav-link">À propos</a>
-                    <a href="service.html" class="nav-item nav-link ">Services</a>
-                    <a href="blog.html" class="nav-item nav-link active">Blog</a>
+                    <a href="service.html" class="nav-item nav-link">Services</a>
+                    <a href="blog.html" class="nav-item nav-link">Blog</a>
+                    <a href="portfolio.html" class="nav-item nav-link active">Portfolio</a>
                     <a href="contact.html" class="nav-item nav-link">Contactez-nous</a>
                 </div>
                 <a href="#" class="btn btn-primary rounded-pill py-2 px-4 my-3 my-lg-0 flex-shrink-0">Get Started</a>
@@ -68,11 +71,11 @@
         <!-- Header Start -->
         <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Blog</h4>
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">FAQs</h4>
                 <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-primary">Blog</li>
+                    <li class="breadcrumb-item active text-primary">FAQ</li>
                 </ol>
             </div>
         </div>
@@ -81,65 +84,68 @@
     <!-- Navbar & Hero End -->
 
 
-    <!-- Blog Start -->
-    <div class="container-fluid blog pb-5 mt-5">
-        <div class="container pb-5">
+    <!-- FAQs Start -->
+    <div class="container-fluid faq-section py-5">
+        <div class="container py-5 overflow-hidden">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 1040px;">
-                <h4 class="text-primary">Notre Blog & Actualités</h4>
-                <h1 class="display-5 mb-4">Restez informés des dernières tendances du digital grâce à Techno It World.
-                </h1>
-                <p class="mb-0">Nous partageons avec vous des articles, conseils et nouveautés autour de la création de
-                    sites web, du design, des applications, du SEO et de la cybersécurité.</p>
+                <h4 class="text-primary">Notre Portfolio</h4>
+                <p class="mb-0">Nous mettons en valeur vos travaux et vos constructions à travers des sites web modernes
+                    et des présentations visuelles impactantes. Chaque image reflète notre savoir-faire en matière de
+                    design, de technologie et de mise en avant de vos réalisations.</p>
             </div>
-            <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay="0.2s">
-                <div class="blog-item p-4">
-                    <div class="blog-img mb-4">
-                        <img src="img/service-1.jpg" class="img-fluid w-100 rounded" alt="">
+            <div class="gallery">
+                <div class="image-grid">
+                    <div class="image-item">
+                        <img src="img/project-1.png"
+                            alt="Image 1"
+                            onclick="openLightbox('img/project-1.png')">
                     </div>
-                    <a href="#" class="h4 d-inline-block mb-3">🌐 Web & Design</a>
-                    <p class="mb-4">Un site web est bien plus qu’une simple vitrine : c’est la première impression que
-                        vos clients ont de votre entreprise. Chez Techno It World, nous croyons qu’un bon design doit
-                        être à la fois beau et fonctionnel.</p>
-
-                </div>
-                <div class="blog-item p-4">
-                    <div class="blog-img mb-4">
-                        <img src="img/service-2.jpg" class="img-fluid w-100 rounded" alt="">
+                    <div class="image-item">
+                        <img src="img/project-2.png"
+                            alt="Image 2"
+                            onclick="openLightbox('img/project-2.png')">
                     </div>
-                    <a href="#" class="h4 d-inline-block mb-3">📱 Applications</a>
-                    <p class="mb-4">Les applications sont devenues indispensables pour interagir avec vos clients et
-                        simplifier vos processus. Chez Techno It World, nous explorons les dernières tendances et
-                        partageons des conseils pour créer des solutions performantes, intuitives et adaptées à vos
-                        besoins. </p>
-
-                </div>
-                <div class="blog-item p-4">
-                    <div class="blog-img mb-4">
-                        <img src="img/service-3.jpg" class="img-fluid w-100 rounded" alt="">
-
+                    <div class="image-item">
+                        <img src="img/project-3.png"
+                            alt="Image 3"
+                            onclick="openLightbox('img/project-3.png')">
                     </div>
-                    <a href="#" class="h4 d-inline-block mb-3">🚀 SEO & Marketing digital</a>
-                    <p class="mb-4">Être présent en ligne ne suffit pas, il faut aussi être visible. Avec Techno It
-                        World, découvrez des techniques SEO efficaces et des stratégies de marketing digital pour
-                        augmenter votre trafic, améliorer votre classement sur Google et attirer de nouveaux clients.
-                    </p>
-
-                </div>
-                <div class="blog-item p-4">
-                    <div class="blog-img mb-4">
-                        <img src="img/service-4.jpg" class="img-fluid w-100 rounded" alt="">
-
+                    <div class="image-item">
+                        <img src="img/project-4.png"
+                            alt="Image 4"
+                            onclick="openLightbox('img/project-4.png')">
                     </div>
-                    <a href="#" class="h4 d-inline-block mb-3">🔒 Cybersécurité & Hébergement</a>
-                    <p class="mb-4">La sécurité est une priorité absolue. Nous vous donnons des astuces pour sécuriser
-                        vos sites et applications, éviter les cyberattaques et garantir un hébergement fiable et rapide
-                        pour vos projets.</p>
-
+                    <div class="image-item">
+                        <img src="img/project-5.png"
+                            alt="Image 5"
+                            onclick="openLightbox('img/project-5.png')">
+                    </div>
+                    <div class="image-item">
+                        <img src="img/project-6.png"
+                            alt="Image 6"
+                            onclick="openLightbox('img/project-6.png')">
+                    </div>
+                    <div class="image-item">
+                        <img src="img/project-7.png"
+                            alt="Image 7"
+                            onclick="openLightbox('img/project-7.png')">
+                    </div>
+                    <div class="image-item">
+                        <img src="img/project-8.png"
+                            alt="Image 8"
+                            onclick="openLightbox('img/project-8.png')">
+                    </div>
                 </div>
+            </div>
+
+            <!-- Lightbox -->
+            <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+                <span class="close">&times;</span>
+                <img id="lightbox-img" class="lightbox-content">
             </div>
         </div>
     </div>
-    <!-- Blog End -->
+    <!-- FAQs End -->
 
     <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
@@ -149,52 +155,65 @@
                 <div class="col-md-6 col-lg-6 col-xl-4">
                     <div class="footer-item">
                         <a href="index.html" class="p-0">
-                            <img src="img/logo-it-world.jpeg" class="img-logo img-logo-footer" alt="Logo">
+                            <h4 class="text-white"><i class="fas fa-search-dollar me-3"></i>Stocker</h4>
+                            <!-- <img src="img/logo.png" alt="Logo"> -->
                         </a>
-                        <p class="mb-4 text-white mt-2">
-                            Techno It World, votre partenaire digital : sites web modernes, designs uniques, logos
-                            professionnels et stratégies SEO efficaces. Créativité & technologie pour transformer votre
-                            vision en réalité.
-                        </p>
-
+                        <p class="mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit
+                            amet, consectetur adipiscing...</p>
+                        <div class="d-flex">
+                            <a href="#" class="bg-primary d-flex rounded align-items-center py-2 px-3 me-2">
+                                <i class="fas fa-apple-alt text-white"></i>
+                                <div class="ms-3">
+                                    <small class="text-white">Download on the</small>
+                                    <h6 class="text-white">App Store</h6>
+                                </div>
+                            </a>
+                            <a href="#" class="bg-dark d-flex rounded align-items-center py-2 px-3 ms-2">
+                                <i class="fas fa-play text-primary"></i>
+                                <div class="ms-3">
+                                    <small class="text-white">Get it on</small>
+                                    <h6 class="text-white">Google Play</h6>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-2">
                     <div class="footer-item">
-                        <!-- <h4 class="text-white mb-4">Quick Links</h4> -->
-                        <a href="#"><i class="fas fa-angle-right me-2"></i>About</a>
-                        <a href="#"><i class="fas fa-angle-right me-2"></i>Services</a>
+                        <h4 class="text-white mb-4">Quick Links</h4>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> About Us</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Feature</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Attractions</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Tickets</a>
                         <a href="#"><i class="fas fa-angle-right me-2"></i> Blog</a>
                         <a href="#"><i class="fas fa-angle-right me-2"></i> Contact us</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item">
-                        <!-- <h4 class="text-white mb-4">Support</h4> -->
-                        <a href="/service.html"><i class="fas fa-angle-right me-2"></i>Création de sites web</a>
-                        <a href="/service.html"><i class="fas fa-angle-right me-2"></i>Applications web</a>
-                        <a href="/service.html"><i class="fas fa-angle-right me-2"></i>Applications mobiles</a>
-                        <a href="/service.html"><i class="fas fa-angle-right me-2"></i>Hébergement web</a>
-                        <a href="/service.html"><i class="fas fa-angle-right me-2"></i>Création logo, images &
-                            contenus</a>
-                        <a href="/service.html"><i class="fas fa-angle-right me-2"></i>Optimisation SEO</a>
+                        <h4 class="text-white mb-4">Support</h4>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Disclaimer</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Support</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> FAQ</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Help</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item">
                         <h4 class="text-white mb-4">Contact Info</h4>
-                        <!-- <div class="d-flex align-items-center">
-                                <i class="fas fa-map-marker-alt text-primary me-3"></i>
-                                <p class="text-white mb-0">123 Street New York.USA</p>
-                            </div> -->
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-map-marker-alt text-primary me-3"></i>
+                            <p class="text-white mb-0">123 Street New York.USA</p>
+                        </div>
                         <div class="d-flex align-items-center">
                             <i class="fas fa-envelope text-primary me-3"></i>
                             <p class="text-white mb-0">info@example.com</p>
                         </div>
                         <div class="d-flex align-items-center">
                             <i class="fa fa-phone-alt text-primary me-3"></i>
-                            <p class="text-white mb-0">06 21 69 15 02</p>
-                            <p class="text-white mb-0">06 55 70 55 97</p>
+                            <p class="text-white mb-0">(+012) 3456 7890</p>
                         </div>
                         <div class="d-flex align-items-center mb-4">
                             <i class="fab fa-firefox-browser text-primary me-3"></i>
@@ -227,7 +246,11 @@
                         reserved.</span>
                 </div>
                 <div class="col-md-6 text-center text-md-end text-body">
-                    Conçu par <a class="border-bottom text-white" href="https://bouranja.com">BOURANJA</a>
+                    <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                    <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                    Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a>
+                    Distributed By <a class="border-bottom text-white" href="https://themewagon.com">ThemeWagon</a>
                 </div>
             </div>
         </div>
@@ -237,6 +260,23 @@
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <script>
+        // Function to open the lightbox with the clicked image
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightbox.style.display = 'block';
+            lightboxImg.src = imageSrc;
+        }
+
+        // Function to close the lightbox
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+        }
+    </script>
 
 
     <!-- JavaScript Libraries -->
