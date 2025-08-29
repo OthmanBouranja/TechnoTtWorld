@@ -641,6 +641,64 @@
     </div>
     <!-- Footer End -->
 
+
+    <div class="wa-wrap">
+        <input type="checkbox" id="wa-toggle" class="wa-toggle">
+
+        <!-- Floating Button -->
+        <label for="wa-toggle" class="wa-btn" aria-label="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        </label>
+
+        <!-- Panel -->
+        <div class="wa-panel" role="dialog" aria-labelledby="wa-title" aria-modal="false">
+            <div class="wa-header">
+                <div class="wa-header-row">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="#e8f5ed" aria-hidden="true">
+                        <path d="M20 2H4a2 2 0 0 0-2 2v15l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z" />
+                    </svg>
+                    <span id="wa-title">Discuter sur WhatsApp</span>
+                </div>
+                <small>Bonjour ! Cliquez sur l’un de nos membres ci-dessous pour discuter sur
+                    <strong>WhatsApp</strong></small>
+            </div>
+
+            <div class="wa-divider"></div>
+
+            <div class="wa-body">
+                <div class="wa-note">
+                    L’équipe répond généralement en quelques minutes
+                    <span class="typing" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span
+                            class="dot"></span></span>
+                </div>
+
+                <!-- Support card -->
+                <a class="wa-card"
+                    href="https://api.whatsapp.com/send?phone=+212621691502&text=Bonjour%2C%20je%20souhaite%20cr%C3%A9er%20une%20application%20ou%20un%20site%20%28design%2C%20SEO%2C%20logo%29%20-%20pouvez-vous%20m%27accompagner%20%3F"
+                    target="_blank" rel="nofollow noopener">
+                    <div class="wa-left">
+                        <label for="wa-toggle" class="wa-btn-card" aria-label="Chat on WhatsApp">
+                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        </label>
+                        <div class="wa-meta">
+                            <div class="title">Support</div>
+                            <div class="sub">Support</div>
+                        </div>
+                    </div>
+                    <div class="wa-right" aria-hidden="true">
+                        <svg viewBox="0 0 32 32" focusable="false" aria-hidden="true">
+                            <path
+                                d="M16 3C9.37 3 4 8.37 4 15c0 2.64.77 5.1 2.09 7.16L5 29l6.07-1.96A11.97 11.97 0 0 0 16 27c6.63 0 12-5.37 12-12S22.63 3 16 3z" />
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Big green close button -->
+        <label for="wa-toggle" class="wa-close" aria-label="Fermer le panneau">&times;</label>
+    </div>
+
     <!-- Copyright Start -->
     <div class="container-fluid copyright py-4">
         <div class="container">
@@ -661,6 +719,83 @@
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <script>
+        // WhatsApp Floating Button
+        document.addEventListener("DOMContentLoaded", () => {
+            const waBtn = document.querySelector(".wa-btn");
+            const toggle = document.getElementById("wa-toggle");
+            const firstLink = document.querySelector(".wa-card");
+
+            // Ripple on main button
+            waBtn.addEventListener("click", (e) => {
+                const rect = waBtn.getBoundingClientRect();
+                const span = document.createElement("span");
+                span.className = "ripple";
+                span.style.left = e.clientX - rect.left + "px";
+                span.style.top = e.clientY - rect.top + "px";
+                waBtn.appendChild(span);
+                span.addEventListener("animationend", () => span.remove());
+            });
+
+            // Confetti burst when panel opens
+            const colors = ["#25D366", "#20bd5a", "#0f9f46", "#34e17a", "#b0f0c7"];
+
+            function confettiBurst(originEl) {
+                const count = 26;
+                const rect = originEl.getBoundingClientRect();
+                const originX = rect.left + rect.width / 2;
+                const originY = rect.top + rect.height / 2;
+
+                for (let i = 0; i < count; i++) {
+                    const piece = document.createElement("div");
+                    piece.className = "confetti";
+                    piece.style.background =
+                        colors[Math.floor(Math.random() * colors.length)];
+                    piece.style.borderRadius = Math.random() > 0.5 ? "2px" : "50%";
+                    piece.style.left = originX + "px";
+                    piece.style.top = originY + "px";
+
+                    const angle = (Math.random() * 120 - 60) * (Math.PI / 180); // -60..60 deg
+                    const velocity = 6 + Math.random() * 10;
+                    const rotate = Math.random() * 720 - 360;
+                    const duration = 900 + Math.random() * 700;
+                    const driftX = Math.random() * 160 - 80;
+
+                    piece.animate(
+                        [
+                            { transform: `translate(0,0) rotate(0deg)`, opacity: 1 },
+                            {
+                                transform: `translate(${Math.cos(angle) * velocity * 8 + driftX
+                                    }px, ${-Math.sin(angle) * velocity * 8 - 30
+                                    }px) rotate(${rotate}deg)`,
+                                opacity: 0.9,
+                                offset: 0.5,
+                            },
+                            {
+                                transform: `translate(${driftX}px, 160px) rotate(${rotate * 1.6
+                                    }deg)`,
+                                opacity: 0,
+                            },
+                        ],
+                        { duration, easing: "cubic-bezier(.2,.8,.2,1)", fill: "forwards" }
+                    );
+
+                    document.body.appendChild(piece);
+                    setTimeout(() => piece.remove(), duration + 60);
+                }
+            }
+
+            toggle.addEventListener("change", () => {
+                if (toggle.checked) {
+                    confettiBurst(waBtn);
+                    // Focus first actionable item for keyboard users
+                    setTimeout(() => firstLink?.focus?.(), 200);
+                }
+            });
+        });
+    </script>
 
 
     <!-- JavaScript Libraries -->
